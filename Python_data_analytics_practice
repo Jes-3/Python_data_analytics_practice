@@ -1,0 +1,90 @@
+# ==========================================
+# PYTHON DATA ANALYTICS PRACTICE
+# Topics: NumPy, Pandas and Matplotlib
+# ==========================================
+
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+# ==========================================
+# QUESTION 1: NUMPY ARRAY
+# Create a NumPy array containing numbers
+# from 1 to 10 and reshape it into a 2x5 matrix.
+# ==========================================
+
+numbers = np.arange(1, 11)
+
+matrix = numbers.reshape(2, 5)
+
+print("\nQUESTION 1: NUMPY ARRAY")
+print(matrix)
+
+
+# ==========================================
+# QUESTION 2: NUMPY STATISTICS
+# Create an array of student marks.
+# Calculate total, average, highest and lowest marks.
+# ==========================================
+
+marks = np.array([75, 80, 65, 90, 85])
+
+print("\nQUESTION 2: STUDENT MARKS")
+print("Total:", np.sum(marks))
+print("Average:", np.mean(marks))
+print("Highest:", np.max(marks))
+print("Lowest:", np.min(marks))
+
+
+# ==========================================
+# QUESTION 3: PANDAS DATAFRAME
+# Create a DataFrame with employee names,
+# departments and salaries.
+# ==========================================
+
+data = {
+    "Name": ["Anu", "Ravi", "Meera", "John"],
+    "Department": ["HR", "IT", "Finance", "IT"],
+    "Salary": [25000, 35000, 30000, 40000]
+}
+
+df = pd.DataFrame(data)
+
+print("\nQUESTION 3: EMPLOYEE DATA")
+print(df)
+
+
+# ==========================================
+# QUESTION 4: GROUP BY
+# Calculate the average salary of each department.
+# ==========================================
+
+average_salary = df.groupby("Department")["Salary"].mean()
+
+print("\nQUESTION 4: AVERAGE DEPARTMENT SALARY")
+print(average_salary)
+
+
+# ==========================================
+# QUESTION 5: MATPLOTLIB BAR CHART
+# Create a bar chart showing marks
+# of five students.
+# ==========================================
+
+students = ["Anu", "Ravi", "Meera", "John", "Sara"]
+student_marks = [75, 80, 65, 90, 85]
+
+plt.bar(students, student_marks)
+
+plt.title("Student Marks")
+plt.xlabel("Students")
+plt.ylabel("Marks")
+
+plt.show()
+
+
+# ==========================================
+# END OF PYTHON DATA ANALYTICS PRACTICE
+# ==========================================
